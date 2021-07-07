@@ -1,0 +1,138 @@
+body {
+    background-color: green;
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "sidebar main main main";
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area: main;
+    row-gap: 10px;
+  }
+  
+  .sidebar {
+    grid-area:sidebar;
+    background-color: white;
+    height: 100vh;
+    width: 25%;
+    position: fixed;
+  }
+  
+  .element {
+    align-items: center;
+    background-color: white;
+    height: 200px;
+    min-height: 200px;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .button {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color: white;
+    background: #2ecc71;
+    border-radius: 50%;
+    text-align: center;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .button:hover {
+    background: #27ae60;
+  }
+  
+  .centered {
+    text-align: center;
+  }
+  
+  #add-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: white;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  
+  .close {
+    color: black;
+    background: #e74c3c;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    font-size: 20px;
+    border-radius: 25px;
+    text-align: center;
+    float: right;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .close:hover {
+    background: #c0392b;
+  }
+  
+  .add {
+    width: 100px;
+    height: 25px;
+    color: white;
+    background: #3498db;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .add:hover {
+    background: #2980b9;
+  }
+  
+  
+  input[type=text] {
+    border: none;
+    border-bottom: 2px solid black;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 15px;
+  }
