@@ -8,33 +8,37 @@
   </head>
   <body>
     <div class="header">
-      <img class="icon" src="svg/lib.svg"/>
-      <h1>My book Library</h1>
+      <img class="icon" src="img/lib.svg"/>
+      <h1>My Book Library</h1>
+      <div class="green-btn round-l add-btn">+</div>
     </div>
     <div class="grid-container">
-      <div class="grid-item">
-        <div class="grid-item-top">
-          <div class="red-btn round-s">✘</div>
-          Buchname
+    </div>
+
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-top">
+          New Book
         </div>
-        <div class="grid-item-bottom">
-          <p>Name des Autos</p>
-          <p>160 Seiten</p>
-          <p>Drei</p>
+        <div class="modal-mid">
+          <label for="new-title">Book title</label>
+          <input id="new-title" type="text" placeholder=""><br>
+          <label for="new-author">Author name</label>
+          <input id="new-author" type="text" placeholder=""><br>
+          <label for="new-pages">Pages</label><br>
+          <input id="new-pages" type="number" placeholder=""><br>
+          <label for="new-isRead">Read?</label>
+          <input id="new-isRead" type="checkbox">
         </div>
-      </div>
-      <div class="grid-item">
-        <div class="grid-item-top">
-          <div class="red-btn round-s">✘</div>
-          Buchname
-        </div>
-        <div class="grid-item-bottom">
-          <p>Name des Autos</p>
-          <p>160 Seiten</p>
-          <p>Drei</p>
+        <div class="modal-bottom green-btn">
+          Add Book
         </div>
       </div>
     </div>
+
+    <a href="https://github.com/faaabi93/library">
+      <img id="github" src="img/GitHub-Mark-120px-plus.png">
+    </a>
     <script src="app.js"></script> 
   </body>
 </html>

@@ -20,17 +20,15 @@ h1 {
 }
 
 .header {
+    position: relative;
     padding-top: 20px;
     display: grid;
-    min-height: 100px;
+    height: 150px;
     text-align: center;
     align-items: center;
 }
 
 .round-s {
-    position: absolute;
-    right: 5px;
-    top: 5px;
     color: black;
     height: 25px;
     width: 25px;
@@ -38,6 +36,17 @@ h1 {
     line-height: 25px;
     font-size: 25px;
     border-radius:25px;
+    text-align: center;
+}
+
+.round-l {
+    color: white;
+    height: 50px;
+    width: 50px;
+    border: black solid 2px;
+    line-height: 50px;
+    font-size: 50px;
+    border-radius: 50px;
     text-align: center;
 }
 
@@ -71,18 +80,51 @@ h1 {
     background: #007eac;
 }
 
+.add-btn {
+    transition: 0.5s;
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+}
+
+.add-btn:hover {
+    transform: scale(1.05) rotate(90deg)
+}
+
+.delete-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    transition: 0.5s;
+}
+
+.delete-btn:hover {
+    transform: scale(1.05) rotate(22.5deg);
+}
+
+.change-btn {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    transition: 0.5s;
+}
+
+.change-btn:hover {
+    transform: scale(1.05) rotate(22.5deg);
+}
+
 .grid-container {
-    min-height: calc(100vh - 130px);
+    min-height: calc(100vh - 210px);
     background: rgb(131,58,180);
     background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: 250px;
-    padding: 10px;
+    grid-auto-rows: 200px;
+    grid-gap: 20px;
+    padding: 20px;
 }
 
 .grid-item {
-    margin: 10px;
     display: grid;
     grid-template-rows: 1fr 2fr;
     transition: .4s;
@@ -98,7 +140,7 @@ h1 {
     color: white;
     text-align: center;
     font-weight: 700;
-    padding-top: 30px;
+    padding-top: 20px;
     border: white solid 2px;
     border-radius: 15px 15px 0px 0px;
 }
@@ -107,5 +149,72 @@ h1 {
     position: relative;
     background: white;
     border-radius: 0px 0px 15px 15px;
-    padding: 0px 20px 20px
+    padding: 0px 20px 20px 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    margin: 15% auto; /* 15% from the top and centered */
+    width: 250px;
+    grid-auto-rows: 200px;
+    transition: 0.5s;
+  }
+
+  input[type=text], input[type=number] {
+      width: 80%;
+      border: none;
+      border-bottom: 1px solid black;
+      margin-bottom: 10px;
+  }
+
+  .modal-content:hover {
+      transform: scale(1.02);
+  }
+
+  .modal-top {
+    border: white solid 2px;
+    border-radius: 15px 15px 0px 0px;
+    color: white;
+    font-weight: 700;
+    background: rgb(131,58,180);
+    background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    padding-top: 25px;
+    text-align: center;
+  }
+
+  .modal-mid {
+    position: relative;
+    background: blue;
+    background: white;
+    padding: 20px 20px 20px 20px;
+  }
+
+  .modal-bottom {
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    border: white solid 2px;
+    border-radius: 0px 0px 15px 15px;
+    padding: 25px 20px 20px 20px;
+  }
+
+#github {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 25px;
 }
