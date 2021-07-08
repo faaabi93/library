@@ -15,14 +15,6 @@ Book.prototype.toogleIsRead = function() {
     this.isRead = !this.isRead;
 };
 
-
-// Test:
-var testBook = new Book("TItel", "autor", 123, true);
-console.log(testBook)
-testBook.toogleIsRead();
-console.log(testBook)
-
-
 // Library:
 myLibrary = []
 
@@ -45,7 +37,6 @@ function markBookAsRead(e) {
     } else {
         e.path[1].children[2].innerText = "Not read yet";
     }
-    console.log(myLibrary)
 };
 
 // Modal:
