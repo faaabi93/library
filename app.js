@@ -11,6 +11,18 @@ function Book(title, author, pages, isRead) {
     this.isRead = isRead;
 };
 
+Book.prototype.toogleIsRead = function() {
+    this.isRead = !this.isRead;
+};
+
+
+// Test:
+var testBook = new Book("TItel", "autor", 123, true);
+console.log(testBook)
+testBook.toogleIsRead();
+console.log(testBook)
+
+
 // Library:
 myLibrary = []
 
@@ -27,12 +39,13 @@ function removeBookFromLibrary(e) {
 
 function markBookAsRead(e) {
     var index = myLibrary.findIndex(x => x.title === e.path[2].children[0].firstChild.data);
-    myLibrary[index].isRead ^= true;
+    myLibrary[index].toogleIsRead();
     if(e.path[1].children[2].innerText === "Not read yet") {
         e.path[1].children[2].innerText = "Already read";
     } else {
         e.path[1].children[2].innerText = "Not read yet";
     }
+    console.log(myLibrary)
 };
 
 // Modal:
