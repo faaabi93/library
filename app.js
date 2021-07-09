@@ -24,18 +24,19 @@ function addBookToLibrary(book) {
 };
 
 function removeBookFromLibrary(e) {
-    var index = myLibrary.findIndex(x => x.title === e.path[1].firstChild.data);
+    var index = myLibrary.findIndex(x => x.title === e.target.getAttribute("data-title"));
     myLibrary.splice(index, 1);
-    gridContainer.removeChild(e.path[2]);
+    gridContainer.removeChild(e.target.parentNode.parentNode);
 };
 
 function markBookAsRead(e) {
-    var index = myLibrary.findIndex(x => x.title === e.path[2].children[0].firstChild.data);
+    tempTitle = e.target.getAttribute("data-title");
+    var index = myLibrary.findIndex(x => x.title === tempTitle);
     myLibrary[index].toogleIsRead();
-    if(e.path[1].children[2].innerText === "Not read yet") {
-        e.path[1].children[2].innerText = "Already read";
+    if(e.target.parentNode.children[2].innerText === "Not read yet") {
+        e.target.parentNode.children[2].innerText = "Already read";
     } else {
-        e.path[1].children[2].innerText = "Not read yet";
+        e.target.parentNode.children[2].innerText = "Not read yet";
     }
 };
 
@@ -97,6 +98,7 @@ function createItem(book) {
     let deleteButton = document.createElement("div");
     deleteButton.classList.add("red-btn", "round-s", "delete-btn");
     deleteButton.textContent = "✘";
+    deleteButton.setAttribute("data-title", `${book.title}`);
     deleteButton.addEventListener("click", removeBookFromLibrary);
     topDiv.textContent = `${book.title}`;
     topDiv.appendChild(deleteButton);
@@ -116,6 +118,7 @@ function createItem(book) {
     }
     let changeReadBtn = document.createElement("div");
     changeReadBtn.textContent = " ";
+    changeReadBtn.setAttribute("data-title", `${book.title}`);
     changeReadBtn.classList.add("blue-btn", "round-s", "change-btn")
     changeReadBtn.addEventListener("click", markBookAsRead);
 
